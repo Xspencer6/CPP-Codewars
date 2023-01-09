@@ -1,0 +1,8 @@
+#include <vector>
+#include <bits/stdc++.h>
+
+long sumTwoSmallestNumbers(std::vector<int> numbers)
+{
+  std::sort(numbers.begin(), numbers.end());
+  return numbers[0] + numbers[1];
+}
