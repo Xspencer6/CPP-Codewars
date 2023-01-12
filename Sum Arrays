@@ -1,0 +1,7 @@
+int sum(std::vector<int> nums) {
+    if(nums.size() == 1) return nums[0];
+    if(nums.empty()) return 0;
+    int answer = 0;
+    for(auto num : nums) answer += num;
+    return answer;
+}
