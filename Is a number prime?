@@ -1,0 +1,15 @@
+#include <cmath>
+
+bool isPrime(int num) {
+    if (num > 1){
+        for(int i = 2; i <= (sqrt(num)); i++){
+            if(num % i == 0){
+                return false; //means not a prime number
+            }
+        }
+        // if the iterative is done and the value of condition is still 0, means the number is a prime number.
+        return true;
+    }
+    return false;
+
+}
