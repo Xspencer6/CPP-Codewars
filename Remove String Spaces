@@ -1,0 +1,12 @@
+#include <string>
+
+std::string no_space(const std::string& x)
+{
+  std::string ans = "";
+   for(auto letter : x){
+     if(letter == ' '){
+       continue;
+     } else ans += letter;
+   }
+  return ans;
+}
