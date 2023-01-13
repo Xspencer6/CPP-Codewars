@@ -1,0 +1,14 @@
+#include <string>
+#include <vector>
+using namespace std;
+
+int getCount(const string& inputStr){
+  std::vector<char> vowels = {'a','e','i','o','u'};
+  int num_vowels = 0;
+  for(auto letter : inputStr){
+    if(std::find(vowels.begin(), vowels.end(), letter) != vowels.end()){  // check if letter is a vowel
+      num_vowels++;
+    }
+  }
+  return num_vowels;
+}
