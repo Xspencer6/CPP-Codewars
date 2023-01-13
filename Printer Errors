@@ -1,0 +1,17 @@
+#include <vector>
+#include <cstring>
+
+class Printer
+{
+public:
+    static std::string printerError(const std::string &s){
+      std::vector<char> goodValues = {'a','b','c','d','e','f','g','h','i','j','k','l','m'};
+      int length = s.length(); int badString = 0;
+      for(auto letter : s){
+        if(std::find(goodValues.begin(), goodValues.end(), letter) != goodValues.end()){
+          continue;
+        } else badString++;
+      }
+      return std::to_string(badString) + "/" + std::to_string(length);
+    }
+};
