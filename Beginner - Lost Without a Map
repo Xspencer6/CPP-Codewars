@@ -1,0 +1,7 @@
+std::vector<int> maps(const std::vector<int> & values) {
+  std::vector<int> answer;
+  for(auto num : values){
+    answer.push_back(num * 2);
+  }
+  return answer;
+}
