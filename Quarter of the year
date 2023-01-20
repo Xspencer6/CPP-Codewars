@@ -1,0 +1,13 @@
+#include <algorithm>
+#include <vector>
+int quarter_of(int month){
+  std::vector<int> quarter1 = {1,2,3};
+  std::vector<int> quarter2 = {4,5,6};
+  std::vector<int> quarter3 = {7,8,9};
+  std::vector<int> quarter4 = {10,11,12};
+  
+  if ((std::find(quarter1.begin(), quarter1.end(), month)) != quarter1.end()) return 1;
+  if ((std::find(quarter2.begin(), quarter2.end(), month)) != quarter2.end()) return 2;
+  if ((std::find(quarter3.begin(), quarter3.end(), month)) != quarter3.end()) return 3;
+  if ((std::find(quarter4.begin(), quarter4.end(), month)) != quarter4.end()) return 4;
+}
