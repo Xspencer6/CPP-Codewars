@@ -1,0 +1,9 @@
+#include <bitset>
+unsigned int countBits(unsigned long long n){
+  std::string binary = std::bitset<256>(n).to_string();  // convert number to binary
+  unsigned int bits = 0;
+  for(auto letter : binary){
+    if(letter == '1') bits++;
+  }
+  return bits;
+}
