@@ -1,0 +1,29 @@
+std::string spinWords(const std::string &str)
+{
+    std::string word, answer;
+    for(int i = 0; (unsigned) i < str.length(); i++){
+        if(str[i] == ' '){
+
+            if(word.size() >= 5){   // if greater than or equal to 5, reverse the word
+                std::reverse(word.begin(), word.end()); // reverse the word
+                answer.append(word);
+                answer += ' ';
+                word = "";  // clear the word variable for another word
+            }
+
+            else{   // don't reverse the word
+                answer.append(word);    // adds the word to answer variable
+                answer += ' ';
+                word = "";  // clear the word variable for another word
+            }
+        }
+        else word += str[i];  // adds letter to word
+    }
+    if(word.length() >= 5) std::reverse(word.begin(), word.end()); // reverse the word
+    answer.append(word);
+    return answer;
+}
+
+spinWords( "Hey fellow warriors" ) => returns "Hey wollef sroirraw" 
+spinWords( "This is a test") => returns "This is a test" 
+spinWords( "This is another test" )=> returns "This is rehtona test"
