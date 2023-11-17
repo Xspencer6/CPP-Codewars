@@ -1,14 +1,11 @@
 // function that gets the maximum sum of subarray
-int maxSubArray(const std::vector<int>& numbers){
-    int answer = 0;
-    for(int a = 0; a < numbers.size(); a++){
-        for(int b = a; b < numbers.size(); b++){
-            int currentSum = 0;
-            for(int k = a; k <= b; k++) {
-                currentSum += numbers[k];
-            }
-            answer = std::max(answer, currentSum); // compares the current sum and the local best sum then stores the higher number
-        }
-    }
-    return answer;
+#include <vector>
+
+int maxSequence(const std::vector<int>& arr){
+  int answer = 0, current = 0;
+  for (int i = 0; i < arr.size(); i++){
+    current = std::max(arr[i], current + arr[i]);    // compare the current sum vs the previous sum added with the current arr[i] : just in case the current value is negative, which means the current sum will decrease, thus should not be taken using std::max
+    answer = std::max(answer, current);
+  }
+  return answer;
 }
